@@ -3,19 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication4;
+package dev;
 
 /**
  *
  * @author user
  */
-public class JavaApplication4 {
+public class MatchingApp {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic h
+        
+        String[] manNames = {};
+        String[] womanNames = {};
+        
+        int[] freeMan = {};
+        
+        int[] wife = {};
+        int[] husband = {};
+        
+        int[][] womanPrefs = {};
+        int[][] manPrefs = {};
+        
+        
+        
     }
     
 }
