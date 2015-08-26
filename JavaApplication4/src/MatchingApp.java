@@ -8,11 +8,10 @@ import java.io.FileNotFoundException;
 
 /**
  *
- * @author Sarah de Voss
+ * @author Group D guys and girls
  */
 public class MatchingApp {
     public static void main(String[] args) throws FileNotFoundException{
-        MatchAlgorithm mA = new MatchAlgorithm();
         String file = "";
         for (String s: args) {
             file = s;

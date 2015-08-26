@@ -1,4 +1,3 @@
-
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -10,7 +9,7 @@ import java.util.Queue;
 public class MatchAlgorithm {
 
     /**
-     * @param args the command line arguments
+     * @param filename
      * @throws java.io.FileNotFoundException
      */
     public static void matching(String filename) throws FileNotFoundException {
