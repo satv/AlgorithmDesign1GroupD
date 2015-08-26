@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dev;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,8 +24,8 @@ public class ParseData {
 
     public void parseFile(String filename) throws FileNotFoundException {
 
-        File file = new File("sm-bbt-in.txt");
-        sc = new Scanner(file);
+        //File file = new File("sm-bbt-in.txt");
+        sc = new Scanner(System.in);
         // .....
 
         while (sc.hasNext()) {
