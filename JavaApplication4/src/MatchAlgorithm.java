@@ -7,16 +7,16 @@ import java.util.Queue;
  *
  * @author Group D guys and girls
  */
-public class MatchingApp {
+public class MatchAlgorithm {
 
     /**
      * @param args the command line arguments
      * @throws java.io.FileNotFoundException
      */
-    public static void main(String args[]) throws FileNotFoundException {
+    public static void matching(String filename) throws FileNotFoundException {
 
         ParseData parseData = new ParseData();
-        parseData.parseFile(args);
+        parseData.parseFile(filename);
 
         int n = parseData.getN();
         String[] manNames = parseData.getManNames();

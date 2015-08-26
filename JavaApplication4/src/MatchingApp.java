@@ -10,9 +10,9 @@ import java.io.FileNotFoundException;
  *
  * @author Sarah de Voss
  */
-public class Main {
+public class MatchingApp {
     public static void main(String[] args) throws FileNotFoundException{
-        MatchingApp matchingApp = new MatchingApp();
-        matchingApp.matching(args[0]);
+        MatchAlgorithm mA = new MatchAlgorithm();
+        MatchAlgorithm.matching(args[0]);
     }
 }

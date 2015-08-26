@@ -22,7 +22,7 @@ public class ParseData {
     int[][] manPrefs;
     int[][] womanPrefs;
 
-    public void parseFile(String[] args) {
+    public void parseFile(String filename) {
 
         //File file = new File("sm-bbt-in.txt");
         sc = new Scanner(System.in);
