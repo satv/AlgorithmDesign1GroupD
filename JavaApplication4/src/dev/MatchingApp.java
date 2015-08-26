@@ -1,5 +1,6 @@
 package dev;
 
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -12,10 +13,10 @@ public class MatchingApp {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         
         ParseData parseData = new ParseData();
-        parseData.parseFile("");
+        parseData.parseFile("sm-bbt-in.txt");
         
         int n = parseData.getN();
         String[] manNames  = parseData.getManNames();
@@ -27,10 +28,8 @@ public class MatchingApp {
         }
         
         //INITIALIZE S to empty matching.
-        ////wife[w]= her man // no bound == null
-        Integer[] wife = new Integer[n]; 
-        ////man[m] = his girl // no bound == null
-        Integer[] husband = new Integer[n]; 
+        Integer[] wife = new Integer[n]; // wife[w]= her man // no bound == null
+        Integer[] husband = new Integer[n]; // man[m] = his girl // no bound == null 
         
         int[][] womanPrefs = parseData.getWomanPrefs();
         int[][] manPrefs = parseData.getManPrefs();
