@@ -13,6 +13,6 @@ import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException{
         MatchingApp matchingApp = new MatchingApp();
-        matchingApp.matching("sm-bbt-in.txt");
+        matchingApp.matching(args[0]);
     }
 }
