@@ -13,6 +13,10 @@ import java.io.FileNotFoundException;
 public class MatchingApp {
     public static void main(String[] args) throws FileNotFoundException{
         MatchAlgorithm mA = new MatchAlgorithm();
-        MatchAlgorithm.matching(args[0]);
+        String file = "";
+        for (String s: args) {
+            file = s;
+        }
+        MatchAlgorithm.matching(file);
     }
 }

@@ -47,7 +47,7 @@ public class MatchAlgorithm {
         while (freeMan.size() != 0) {
             int currMan = freeMan.poll();
             for (int i = 0; i < n; i++) {
-                //w ← first woman on m's list to whom m has not yet proposed.
+                //w <- first woman on m's list to whom m has not yet proposed.
                 int w = manPrefs[currMan][i];
                 //IF (w is unmatched)
                 if (wife[w] == null) {
