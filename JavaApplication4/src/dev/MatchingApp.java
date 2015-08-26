@@ -27,8 +27,10 @@ public class MatchingApp {
         }
         
         //INITIALIZE S to empty matching.
-        Integer[] wife = new Integer[n];
-        Integer[] husband = new Integer[n];
+        ////wife[w]= her man // no bound == null
+        Integer[] wife = new Integer[n]; 
+        ////man[m] = his girl // no bound == null
+        Integer[] husband = new Integer[n]; 
         
         int[][] womanPrefs = parseData.getWomanPrefs();
         int[][] manPrefs = parseData.getManPrefs();
@@ -58,11 +60,13 @@ public class MatchingApp {
                 //ELSE IF (w prefers m to her current partner m')
                 else if(invertWomanPrefs[w][currMan] < invertWomanPrefs[w][wife[w]]){
                     //Remove pair m'–w from matching S.
+                    freeMan.add(wife[w]);
                     wife[w] = null;
                     husband[currMan] = null;
                     //Add pair m–w to matching S.
                     wife[w] = currMan;
                     husband[currMan] = w;
+                    break;
                 }
                 //ELSE
                 else{
