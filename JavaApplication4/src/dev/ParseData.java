@@ -13,27 +13,57 @@ import java.util.Scanner;
  */
 public class ParseData {
 
+    Scanner sc;
     int n;
+    String[] manNames;
+    String[] womanNames;
+    int[][] manPrefs;
+    int[][] womanPrefs;
 
-    public void parseFile(String filename) {
+    public void parseFile(Scanner sc) {
         // .....
-        Scanner sc = new Scanner(System.in);
+        this.sc = sc;
+
         while (sc.hasNext()) {
             String token = sc.next();
             if (token.startsWith("#")) {
+                sc.nextLine();
+//            } else if (token.startsWith("")) {
+//                sc.nextLine();
+            } else if (token.startsWith("n=")) {
                 n = Integer.parseInt(token.substring(2));
+                manNames = new String[n];
+                womanNames = new String[n];
+                manPrefs = new int[n][n];
+                womanPrefs = new int[n][n];
+
             } else if (token.endsWith(":")) {
-                // add ids to priority list
+                // add ids to preference list
+                int id = Integer.parseInt(token.substring(0, token.length() - 1));
+                String[] priorities = sc.nextLine().trim().split(" ");
+
+                if (id % 2 == 0) {
+                    for (int i = 0; i < priorities.length; i++) {
+                        int priorityId = Integer.parseInt(priorities[i]);
+                        womanPrefs[(id - 1) / 2][i] = (priorityId - 1) / 2;
+                    }
+                } else {
+                    for (int i = 0; i < priorities.length; i++) {
+                        int priorityId = Integer.parseInt(priorities[i]);
+                        manPrefs[(id - 1) / 2][i] = (priorityId - 1) / 2;
+                    }
+                }
+
             } else {
-                // add id to list
-                    // if (id % 2 == 0) {
-                    // it's a woman
-                // }
-                // it's man
+
+                int id = Integer.parseInt(token);
+                if (id % 2 == 0) {
+                    womanNames[(id - 1) / 2] = sc.next();
+                } else {
+                    manNames[(id - 1) / 2] = sc.next();
+                }
             }
-
         }
-
     }
 
     public int getN() {
@@ -41,24 +71,20 @@ public class ParseData {
     }
 
     public String[] getManNames() {
-        String[] manNames = {"Sheldon", "Rajesh", "Howard", "Leonard"};
         return manNames;
     }
 
     public String[] getWomanNames() {
-        String[] womanNames = {"Amy", "Penny", "Bernadette", "Emily"};
         return womanNames;
     }
 
     public int[][] getWomanPrefs() {
         // int[][] womanPrefs = {{1, 7, 5, 3}, {7, 3, 1, 5}, {5, 3, 7, 1}, {7, 5, 1, 3}};
-        int[][] womanPrefs = {{0, 3, 2, 1}, {3, 1, 0, 2}, {2, 1, 3, 0}, {3, 2, 0, 1}};
         return womanPrefs;
     }
 
     public int[][] getManPrefs() {
         // int[][] manPrefs = {{2, 4, 6, 8},{6, 4, 2, 8},{6, 4, 8, 2},{4, 8, 6, 2}};
-        int[][] manPrefs = {{0, 1, 2, 3}, {2, 1, 0, 3}, {2, 1, 3, 0}, {1, 3, 2, 0}};
         return manPrefs;
     }
 }
