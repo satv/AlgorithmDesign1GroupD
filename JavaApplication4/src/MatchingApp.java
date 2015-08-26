@@ -13,8 +13,11 @@ import java.io.FileNotFoundException;
 public class MatchingApp {
     public static void main(String[] args) throws FileNotFoundException{
         String file = "";
-        for (String s: args) {
+        for(String s: args){
             file = s;
+        }
+        if(file.compareTo("") == 0){
+            file = "sm-bbt-in.txt";
         }
         MatchAlgorithm.matching(file);
     }

@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -13,10 +15,10 @@ public class ParseData {
     int[][] manPrefs;
     int[][] womanPrefs;
 
-    public void parseFile(String filename) {
+    public void parseFile(String filename) throws FileNotFoundException {
 
-        //File file = new File("sm-bbt-in.txt");
-        sc = new Scanner(System.in);
+        File file = new File(filename);
+        sc = new Scanner(file);
         // .....
 
         while (sc.hasNext()) {
