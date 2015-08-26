@@ -20,9 +20,12 @@ public class MatchingApp {
      */
     public static void main(String[] args) {
         
+        ParseData parseData = new ParseData();
+        parseData.parseFile("");
+        
         int n = 4;
-        String[] manNames  = {"Sheldon", "Rajesh", "Howard", "Leonard"};
-        String[] womanNames = {"Amy", "Penny", "Bernadette", "Emily"};        
+        String[] manNames  = parseData.getManNames();
+        String[] womanNames = parseData.getWomanNames();        
         
         Queue<Integer> freeMan = new LinkedList();
         for(int i = 0; i < n; i++){
@@ -33,8 +36,8 @@ public class MatchingApp {
         Integer[] wife = new Integer[n];
         Integer[] husband = new Integer[n];
         
-        int[][] womanPrefs = {{1, 7, 5, 3}, {7, 3, 1, 5}, {5, 3, 7, 1}, {7, 5, 1, 3}};
-        int[][] manPrefs = {{2, 4, 6, 8}, {6, 4, 2, 8}, {6, 4, 8, 2}, {4, 8, 6, 2}};
+        int[][] womanPrefs = parseData.getWomanPrefs();
+        int[][] manPrefs = parseData.getManPrefs();
         
         
         //while(some man m is unmatched and hasn't proposed to every woman)

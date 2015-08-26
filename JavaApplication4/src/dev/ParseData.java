@@ -39,14 +39,4 @@ public class ParseData {
         int[][] manPrefs = {{2, 4, 6, 8},{6, 4, 2, 8},{6, 4, 8, 2},{4, 8, 6, 2}};
         return manPrefs;
     }
-    
-        public int[][] getInversWomanPrefs(){
-        int[][] womanPrefs = {}; 
-        return womanPrefs;
-    }
-    
-    public int[][] getInversManPrefs(){
-        int[][] manPrefs = {};
-        return manPrefs;
-    }
 }
