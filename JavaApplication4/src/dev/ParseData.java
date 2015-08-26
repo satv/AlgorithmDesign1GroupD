@@ -23,8 +23,8 @@ public class ParseData {
     int[][] womanPrefs;
 
     public void parseFile(String filename) throws FileNotFoundException {
-        
-        File file = new File(filename);
+
+        File file = new File("sm-bbt-in.txt");
         sc = new Scanner(file);
         // .....
 
@@ -68,6 +68,9 @@ public class ParseData {
                 }
             }
         }
+//        printManNames();
+//        printWomanNames();
+//        printHowardsPriorities();
     }
 
     public int getN() {
@@ -90,5 +93,23 @@ public class ParseData {
     public int[][] getManPrefs() {
         // int[][] manPrefs = {{2, 4, 6, 8},{6, 4, 2, 8},{6, 4, 8, 2},{4, 8, 6, 2}};
         return manPrefs;
+    }
+
+    private void printManNames() {
+        for (int i = 0; i < n; i++) {
+            System.out.println(i + " " + manNames[i]);
+        }
+    }
+
+    private void printWomanNames() {
+        for (int i = 0; i < n; i++) {
+            System.out.println(i + " " + womanNames[i]);
+        }
+    }
+    
+    private void printHowardsPriorities() {
+        for (int i =0; i < n; i++ ) {
+            System.out.println(manPrefs[2][i]);
+        }
     }
 }
