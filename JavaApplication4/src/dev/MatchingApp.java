@@ -74,6 +74,10 @@ public class MatchingApp {
             }
             //RETURN stable matching S.
         }
+        
+        Output o = new Output();
+        //o.debugEverything(n, manNames, womanNames, womanPrefs, manPrefs, invertWomanPrefs, invertManPrefs);
+        //o.doublePairing(n, manNames, womanNames, wife, husband);
+        o.mimicExampleOutputStyle(n, manNames, womanNames, wife, husband);
     }
-    
 }
