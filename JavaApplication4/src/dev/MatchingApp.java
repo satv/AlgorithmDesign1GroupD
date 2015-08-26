@@ -13,10 +13,11 @@ public class MatchingApp {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void matching(String filename) throws FileNotFoundException {
+    
         
         ParseData parseData = new ParseData();
-        parseData.parseFile("sm-bbt-in.txt");
+        parseData.parseFile(filename);
         
         int n = parseData.getN();
         String[] manNames  = parseData.getManNames();
