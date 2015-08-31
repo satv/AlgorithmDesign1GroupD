@@ -8,7 +8,6 @@ import java.util.Scanner;
  * @author Aaron Gornott <agor@itu.dk>
  * @author Rene Anda Nielsen <rann@itu.dk>
  */
-
 public class GS {
 
     private static Scanner sc;
@@ -23,39 +22,39 @@ public class GS {
     public static void main(String[] args) {
 
         GS gs = new GS();
-
         sc = new Scanner(System.in);
 
         while (sc.hasNext()) {
             String token = sc.next();
+            // ignore lines starting with #
             if (token.startsWith("#")) {
                 sc.nextLine();
+                // initialize n and create data structure
             } else if (token.startsWith("n=")) {
                 n = Integer.parseInt(token.substring(2));
                 manNames = new String[n];
                 womanNames = new String[n];
                 manPrefs = new int[n][n];
                 womanPrefs = new int[n][n];
-
+                // create preference lists
             } else if (token.endsWith(":")) {
-
                 int id = Integer.parseInt(token.substring(0, token.length() - 1));
                 String[] priorities = sc.nextLine().trim().split(" ");
-
+                // if id belongs to a woman add entries to womanPrefs
                 if (id % 2 == 0) {
                     for (int i = 0; i < priorities.length; i++) {
                         int priorityId = Integer.parseInt(priorities[i]);
                         womanPrefs[(id - 1) / 2][i] = (priorityId - 1) / 2;
                     }
                 } else {
+                    // if not add entries to manPrefs
                     for (int i = 0; i < priorities.length; i++) {
                         int priorityId = Integer.parseInt(priorities[i]);
                         manPrefs[(id - 1) / 2][i] = (priorityId - 1) / 2;
                     }
                 }
-
             } else {
-
+                // separate men and women into two arrays
                 int id = Integer.parseInt(token);
                 if (id % 2 == 0) {
                     womanNames[(id - 1) / 2] = sc.next();
@@ -81,11 +80,11 @@ public class GS {
         husband = new Integer[n]; // man[m] = his girl // no bound == null 
 
         int[][] invertWomanPrefs = new int[n][n];
-        int[][] invertManPrefs = new int[n][n];
+        // not needed int[][] invertManPrefs = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 invertWomanPrefs[i][womanPrefs[i][j]] = j;
-                invertManPrefs[i][manPrefs[i][j]] = j;
+                // not needed invertManPrefs[i][manPrefs[i][j]] = j;
             }
         }
         //while(some man m is unmatched and hasn't proposed to every woman)
